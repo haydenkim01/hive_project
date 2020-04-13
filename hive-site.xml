@@ -1,0 +1,5 @@
+<property>
+    <name>hive.metastore.schema.verification</name>
+    <value>false</value>
+    <description>.</description>
+</property>
