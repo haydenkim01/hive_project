@@ -21,6 +21,7 @@ RUN tar -xzvf apache-hive-2.3.6-bin.tar.gz && \
     rm apache-hive-2.3.6-bin.tar.gz
 ENV HIVE_HOME=/hive
 ENV PATH=${HADOOP_HOME}/bin:${HIVE_HOME}/bin:${PATH}
+# aka hive.metastore.warehouse.dir = /user/hive/warehouse
 RUN ${HADOOP_HOME}/bin/hadoop fs -mkdir -p /user/hive/warehouse && \
     ${HADOOP_HOME}/bin/hadoop fs -chmod g+w /tmp && \
     ${HADOOP_HOME}/bin/hadoop fs -chmod g+w /user/hive/warehouse
@@ -37,3 +38,7 @@ RUN schematool -initSchema -dbType derby
 RUN wget http://files.grouplens.org/datasets/movielens/ml-100k.zip && \
     apt-get install unzip && \
     unzip ml-100k.zip
+
+# start beeline
+# $HIVE_HOME/bin/hiveserver2
+# $HIVE_HOME/bin/beeline -u jdbc:hive2://localhost:10000
