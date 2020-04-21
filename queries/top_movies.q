@@ -37,9 +37,7 @@ CREATE TABLE top_movies (
   rating_avg INT)
 PARTITIONED BY (occupation STRING);
 
-add FILE /hive_project/queries/top_movies.py;
-
-set hive.exec.dynamic.partition.mode=nonstrict;
+SET hive.exec.dynamic.partition.mode=nonstrict;
 
 INSERT OVERWRITE TABLE top_movies PARTITION (occupation)
 SELECT
@@ -53,3 +51,6 @@ JOIN movies ON (ratings.movie_id = movies.movie_id)
 GROUP BY users.occupation, movies.movie_title
 HAVING rating_cnt > 5
 ORDER BY users.occupation ASC, rating_avg DESC;
+
+SHOW TABLES;
+SELECT COUNT(*) FROM top_movies;
