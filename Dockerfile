@@ -35,8 +35,8 @@ RUN wget http://files.grouplens.org/datasets/movielens/ml-100k.zip && \
     unzip ml-100k.zip && \
     rm ml-100k.zip
 
-COPY . /hive_project
-RUN chmod +777 /hive_project/run_queries.sh && \
-    /hive_project/run_queries.sh
+COPY . /hive_tutorial
+RUN chmod +777 /hive_tutorial/run_queries.sh && \
+    /hive_tutorial/run_queries.sh
 
 CMD /bin/bash

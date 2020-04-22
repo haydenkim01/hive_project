@@ -1,6 +1,4 @@
-## hive_project
-* For hive tutorial
-
+## hive_tutorial
 ### queries/top_movies.q
     (1) ratings table
     (2) users table
