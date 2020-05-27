@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/hive-project/badge/?version=latest)](https://hive-project.readthedocs.io/en/latest/?badge=latest)
+
 ## hive_project
 ### queries/top_movies.q
     (1) ratings table
